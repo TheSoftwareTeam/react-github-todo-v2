@@ -43,7 +43,7 @@ class TodoItem extends Component {
             <h3>{this.props.index + " . "}</h3>
             <h3>{this.props.todo.title}</h3>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <h4>{"(" + index2 +" Subtasks" + ")"}</h4>
+            <h4>{"(" + index2 +" Subtasks"}{")"}</h4>
           </ListItem>
 
           <Divider variant="fullWidth" component="li" />
