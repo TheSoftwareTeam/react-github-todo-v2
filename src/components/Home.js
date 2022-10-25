@@ -11,9 +11,11 @@ import Grid from "@mui/material/Unstable_Grid2";
 import Repo from "./Repo/Repo";
 import Todo from "./Todo/Todo";
 import TodoDetail from "./TodoDetails/TodoDetail";
+import axios from "axios";
 
-export default class Home extends Component {
-  state = { isActive: true };
+class Home extends Component {
+
+  state = { isActive: true ,repos:[]};
 
   handleToggle = () => {
     this.setState({ isActive: !this.state.isActive });
@@ -24,6 +26,18 @@ export default class Home extends Component {
       taskId: taskId,
     });
   }
+
+  componentDidMount(){
+    axios.get(`https://api.github.com/users/mahirkursun/repos`)
+    .then((response)=>{
+      this.setState({
+        repos: response.data
+      })
+        
+       console.log(response);
+    }).catch(err => console.log(err))
+  }
+  
 
   render() {
     const isActive = this.state.isActive;
@@ -50,7 +64,9 @@ export default class Home extends Component {
         <Box sx={{ flexGrow: 1 }}>
           <Grid container spacing={2} columns={12}>
             <Grid xs={5}>
-              <Repo />
+
+              <Repo repos={this.state.repos}/>
+              
             </Grid>
             <Grid xs={7}>
               {isActive ? (
@@ -71,3 +87,4 @@ export default class Home extends Component {
     );
   }
 }
+export default Home;
