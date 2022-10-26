@@ -12,10 +12,9 @@ import Repo from "./Repo/Repo";
 import Todo from "./Todo/Todo";
 import TodoDetail from "./TodoDetails/TodoDetail";
 import axios from "axios";
-
+import Card from "@mui/material/Card";
 class Home extends Component {
-
-  state = { isActive: true ,repos:[]};
+  state = { isActive: true, repos: [] };
 
   handleToggle = () => {
     this.setState({ isActive: !this.state.isActive });
@@ -27,23 +26,27 @@ class Home extends Component {
     });
   }
 
-  componentDidMount(){
-    axios.get(`https://api.github.com/users/mahirkursun/repos`)
-    .then((response)=>{
-      this.setState({
-        repos: response.data
+  componentDidMount() {
+    axios
+      .get(`https://api.github.com/users/mahirkursun/repos`)
+      .then((response) => {
+        this.setState({
+          repos: response.data,
+        });
+
+        console.log(response);
       })
-        
-       console.log(response);
-    }).catch(err => console.log(err))
+      .catch((err) => console.log(err));
   }
-  
 
   render() {
     const isActive = this.state.isActive;
     return (
       <Container fixed>
         <Button
+          onClick={() => {
+            this.props.login();
+          }}
           className="btnSignOut"
           variant="contained"
           endIcon={<LogoutIcon />}
@@ -64,9 +67,12 @@ class Home extends Component {
         <Box sx={{ flexGrow: 1 }}>
           <Grid container spacing={2} columns={12}>
             <Grid xs={5}>
-
-              <Repo repos={this.state.repos}/>
-              
+              <Card className="reposCard">
+                <h3 style={{ fontSize: "24px" }}>My GitHub Repos</h3>
+                {this.state.repos.map((r) => (
+                  <Repo key={r.id} repo={r} />
+                ))}
+              </Card>
             </Grid>
             <Grid xs={7}>
               {isActive ? (

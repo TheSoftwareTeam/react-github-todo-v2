@@ -52,3 +52,21 @@
   width: 20%;
   
 }
+.btnSignIn {
+  border-radius: 15px;
+  margin-top: 85px;
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+  transition: 0.4s;
+}
+
+.todoText {
+  color: #34495e;
+  margin-top: 100px;
+  margin-left: 40px;
+  margin-bottom: 30px;
+  font-family: cursive;
+  font-weight: bold;
+}
