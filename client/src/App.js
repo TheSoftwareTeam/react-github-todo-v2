@@ -20,7 +20,7 @@ function App() {
           method: "GET",
         })
           .then((response) => {
-            console.log(response);
+            //console.log(response);
             return response.json();
           })
           .then((data) => {
@@ -33,6 +33,9 @@ function App() {
       }
       getAccessToken();
     }
+    setTimeout(() => {
+      this.setState(getUserData());
+    }, 10);
   });
 
   async function getUserData() {
@@ -46,7 +49,7 @@ function App() {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
+        //console.log(data);
         setUserData(data);
       });
   }

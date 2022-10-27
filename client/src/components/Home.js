@@ -14,8 +14,41 @@ import TodoDetail from "./TodoDetails/TodoDetail";
 import axios from "axios";
 import Card from "@mui/material/Card";
 class Home extends Component {
+  constructor(props) {
+    super(props);
 
-  state = { isActive: true, repos: [] };
+    this.props.getUserData();
+    this.state = {
+      isActive: true,
+      repos: [],
+    };
+
+    this.submitHandler = this.submitHandler.bind(this);
+
+    this.buttonRef = React.createRef();
+  }
+
+  submitHandler(evt) {
+    evt.preventDefault();
+    this.setState(this.props.getUserData());
+    axios
+      .get(this.props.userData.repos_url)
+      .then((response) => {
+        this.setState({
+          repos: response.data,
+        });
+
+        //console.log(response);
+      })
+      .catch((err) => console.log(err));
+  }
+
+  componentDidMount() {
+    this.props.getUserData();
+    setTimeout(() => {
+      this.setState(this.buttonRef.current.click());
+    }, 500);
+  }
 
   handleToggle = () => {
     this.setState({ isActive: !this.state.isActive });
@@ -24,37 +57,20 @@ class Home extends Component {
   getTaskId(taskId) {
     this.setState({
       taskId: taskId,
-    }); 
-  }
-
-
-  componentDidMount() {
-    this.props.getUserData();
-    
-    axios
-      .get(this.props.userData.repos_url)
-      .then((response) => {
-        this.setState({
-          repos: response.data,
-        }); 
- 
-        console.log(response);
-        
-      })
-      .catch((err) => console.log(err));
-      
+    });
   }
 
   render() {
-
     const isActive = this.state.isActive;
     return (
       <Container fixed>
-        
+        <button ref={this.buttonRef} onClick={this.submitHandler}>
+          ds
+        </button>
         <Button
           onClick={() => {
             localStorage.removeItem("accessToken");
-            this.props.setRerender(!this.props.rerender); 
+            this.props.setRerender(!this.props.rerender);
           }}
           className="btnSignOut"
           variant="contained"

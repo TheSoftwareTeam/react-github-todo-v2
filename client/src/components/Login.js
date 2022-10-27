@@ -35,7 +35,7 @@ export default class Login extends Component {
                 variant="outlined"
                 onClick={() => {
                   this.props.loginWithGithub()
-                  this.props.getRepos()
+            
                   
                  
                 }}
