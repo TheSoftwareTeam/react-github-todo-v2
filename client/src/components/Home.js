@@ -10,9 +10,19 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import Grid from "@mui/material/Unstable_Grid2";
 import Repo from "./Repo/Repo";
 import Todo from "./Todo/Todo";
-import TodoDetail from "./TodoDetails/TodoDetail";
+import TodoDetail from "./TodoDetail/TodoDetail";
 import axios from "axios";
 import Card from "@mui/material/Card";
+import todoReducer from "../reducers/todos";
+import todoDetailReducer from "../reducers/todosDetail";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import {
+  getTodosFromStorage,
+  setTodosInStorage,
+  getTodosDetailFromStorage,
+  setTodosDetailInStorage,
+} from "../services/localStorage";
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -61,6 +71,27 @@ class Home extends Component {
   }
 
   render() {
+
+    const store1 = createStore(
+      todoReducer,
+      getTodosFromStorage() // Get persisted state from local storage
+    );
+
+    // Persist state in localStorage
+    store1.subscribe(() => {
+      setTodosInStorage(store1.getState());
+    });
+
+    const store2 = createStore(
+      todoDetailReducer,
+      getTodosDetailFromStorage() // Get persisted state from local storage
+    );
+
+    // Persist state in localStorage
+    store2.subscribe(() => {
+      setTodosDetailInStorage(store2.getState());
+    });
+
     const isActive = this.state.isActive;
     return (
       <Container fixed>
@@ -100,18 +131,22 @@ class Home extends Component {
               </Card>
             </Grid>
             <Grid xs={7}>
-              {isActive ? (
-                <Todo
-                  getTaskId={(taskId) => this.getTaskId(taskId)}
-                  handleToggle={this.handleToggle}
-                />
-              ) : (
-                <TodoDetail
-                  getTaskId={this.state.taskId}
-                  handleToggle={this.handleToggle}
-                />
-              )}
-            </Grid>
+                {isActive ? (
+                  <Provider store={store1}>
+                    <Todo
+                      getTaskId={(taskId) => this.getTaskId(taskId)}
+                      handleToggle={this.handleToggle}
+                    />
+                  </Provider>
+                ) : (
+                  <Provider store={store2}>
+                    <TodoDetail
+                      getTaskId={this.state.taskId}
+                      handleToggle={this.handleToggle}
+                    />
+                  </Provider>
+                )}
+              </Grid>
           </Grid>
         </Box>
       </Container>

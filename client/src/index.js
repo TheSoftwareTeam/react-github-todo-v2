@@ -7,7 +7,7 @@ import { Routes } from "react-router-dom";
 import { Route } from "react-router-dom";
 import Home from "./components/Home";
 import Todo from "./components/Todo/Todo";
-import TodoDetail from "./components/TodoDetails/TodoDetail";
+import TodoDetail from "./components/TodoDetail/TodoDetail";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
