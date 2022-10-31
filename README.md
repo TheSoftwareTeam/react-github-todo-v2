@@ -18,7 +18,7 @@
  <tr>
     <td><img src="https://github.com/TheSoftwareTeam/react-github-todo-v2/blob/master/img/todo2.png" alt="Your image title" /></td>
  </tr>
-  <tr>
+   <tr>
     <td>
        Github Repos and Todo tasks
 
@@ -30,12 +30,12 @@
     <td><img src="https://github.com/TheSoftwareTeam/react-github-todo-v2/blob/master/img/todo3.png" alt="Your image title" /></td>
  </tr>
  
-  <tr>
+   <tr>
     <td>
-      Github Repos and Todo subtasks
+       Github Repos and Todo subtasks
+
     <br />
     </td>
-  
  </tr>
 
  
