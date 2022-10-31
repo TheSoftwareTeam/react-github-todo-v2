@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-
+import Card from "@mui/material/Card";
 import Divider from "@mui/material/Divider";
 
 class TodoItem extends Component {
@@ -24,24 +24,25 @@ class TodoItem extends Component {
     return (
     <>
       <List>
+        <Card className="todoListCard">
         <ListItem
           secondaryAction={
             
-            <button onClick={() => {this.props.handleToggle();
+            <button className="detailsBtn" onClick={() => {this.props.handleToggle();
               this.props.getTaskId(this.props.todo.taskId);
 
               console.log(this.props.todo.taskId)}}>Details
             
             </button>
           }
-          style={{ height: "45px" }}
+          style={{ height: "48px" }}
         >
           <h3>{this.props.index + " . "}</h3>
             <h3>{this.props.todo.task}</h3>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <h4>{"(" + index2 +" Subtasks"}{")"}</h4>
         </ListItem>
-
+        </Card>
         <Divider variant="fullWidth" component="li" />
       </List>
       </>

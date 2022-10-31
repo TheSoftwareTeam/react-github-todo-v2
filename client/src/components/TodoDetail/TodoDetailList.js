@@ -12,12 +12,15 @@ render() {
       {/* Tamamlanmayan Todo detay */}
       {this.props.todosDetail.reverse().map((todoDetail) =>
         todoDetail.completed ? (
-          <div></div>
-        ) : this.props.getTaskId === todoDetail.taskId ? (
+          <></>
+        ) :
+        
+        this.props.getTaskId === todoDetail.taskId ? (
+          <ul className="TodoDetailList">
           <TodoDetailItem
           key={todoDetail.subtaskId} index={(index = index + 1)} todoDetail={todoDetail} getTaskId={this.props.getTaskId}
            
-          />
+          /></ul>
         ) : (
           []
         )
@@ -38,7 +41,7 @@ render() {
             []
           )
         ) : (
-          <div></div>
+          <></>
         )
       )}
     </>

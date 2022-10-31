@@ -6,7 +6,7 @@ import Button from "@mui/material/Button";
 class TodoDetail extends Component {
   render() {
     return (
-      <div className="todoCard">
+      <div className="todoDetailCard">
         <Button
           style={{
             maxWidth: "35px",

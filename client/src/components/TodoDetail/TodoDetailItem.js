@@ -7,6 +7,7 @@ import IconButton from "@mui/material/IconButton";
 import Checkbox from "@mui/material/Checkbox";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Divider from "@mui/material/Divider";
+import { Card } from "@mui/material";
 
 class TodoDetailItem extends Component {
   handleTodoToggle = () => {
@@ -26,23 +27,28 @@ class TodoDetailItem extends Component {
         {completed &&
           (this.props.getTaskId === taskId ? (
             <List>
-              {
-                <ListItem
-                  secondaryAction={
-                    <IconButton edge="end" aria-label="delete">
-                      <DeleteIcon onClick={this.handleTodoRemove} />
-                    </IconButton>
-                  }
-                >
-                  <Checkbox
-                    onClick={this.handleTodoToggle}
-                    checked={completed}
-                  />
+              <Card >
+                {
+                  <ListItem className="todoDetailListCard"
+                    secondaryAction={
+                      <IconButton edge="end" aria-label="delete">
+                        <DeleteIcon onClick={this.handleTodoRemove} />
+                      </IconButton>
+                    }
+                    
+                  >
+                    <Checkbox
+                      onClick={this.handleTodoToggle}
+                      checked={completed}
+                    />
 
-                  <h3 className={completed ? "line" : "noneLine"}>{subtask}</h3>
-                </ListItem>
-              }
-              <Divider variant="fullWidth" component="li" />
+                    <h3 className={completed ? "line" : "noneLine"}>
+                      {subtask}
+                    </h3>
+                  </ListItem>
+                }
+                <Divider  variant="fullWidth" component="li" />
+              </Card>
             </List>
           ) : (
             <></>
@@ -50,8 +56,9 @@ class TodoDetailItem extends Component {
         {!completed &&
           (this.props.getTaskId === taskId ? (
             <List>
-              {
-                <ListItem
+              <Card >
+                {
+                  <ListItem className="todoDetailListCard"
                   secondaryAction={
                     <IconButton edge="end" aria-label="delete">
                       <DeleteIcon onClick={this.handleTodoRemove} />
@@ -65,10 +72,13 @@ class TodoDetailItem extends Component {
                     checked={completed}
                   />
 
-                  <h3 className={completed ? "line" : "noneLine"}>{subtask}</h3>
+                  <h3 className={completed ? "line" : "noneLine"}>
+                    {subtask}
+                  </h3>
                 </ListItem>
-              }
-              <Divider variant="fullWidth" component="li" />
+                }
+                <Divider  variant="fullWidth" component="li" />
+              </Card>
             </List>
           ) : (
             <></>

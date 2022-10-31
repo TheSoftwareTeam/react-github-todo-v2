@@ -23,20 +23,68 @@
 }
 
 .appBar{
-  border-radius: 15px;
+  border-radius: 10px;
 }
 .reposCard{
   margin-top: 10px;
   padding: 15px;
   border: 1px solid black;
+  border-radius: 15px;
+}
+.repoCard{
+  text-decoration-line: none;
+}
+.repoCard:hover{
+  text-decoration-line: underline;
+  background-color: rgb(248, 248, 248);
 }
 .todoCard{
   margin-top: 10px;
   padding: 15px;
   border: 1px solid black;
+  border-radius: 10px;
 }
+
+.todoDetailCard{
+  margin-top: 10px;
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.todoListCard{
+  margin-bottom: 10px;
+
+}
+.todoListCard:hover{
+  cursor: pointer;
+  background-color: rgb(248, 248, 248);
+
+}
+
 .TodoInput{
   margin-top: 15px;
+}
+.TodoList{
+  margin: 0;
+  padding: 0;
+
+}
+.TodoDetailList{
+  margin: 0;
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.todoDetailListCard{
+  margin-bottom: -4px;
+  height:50px;
+  padding-top:-20px;
+  
+}
+.todoDetailListCard:hover{
+  cursor: pointer;
+  background-color: rgb(248, 248, 248);
 }
 .noneLine{
   text-decoration: none;
@@ -65,7 +113,7 @@
 .todoText {
   color: #34495e;
   margin-top: 100px;
-  margin-left: 40px;
+  margin-left: 45px;
   margin-bottom: 30px;
   font-family: cursive;
   font-weight: bold;
@@ -73,4 +121,16 @@
 .getReposBtn {
   background: transparent;
   border: none !important;
+}
+.detailsBtn{
+  background: transparent;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 80px;
+
+}
+.detailsBtn:hover{
+  cursor: pointer;
+  text-decoration-line: underline;
+  color: blue;
 }
