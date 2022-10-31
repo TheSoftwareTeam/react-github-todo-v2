@@ -6,7 +6,7 @@
   </tr>
   
   <tr>
-    <td><img src="https://github.com/mahirkursun/react-github-todo-v2/blob/main/img/todo1.png" alt="Your image title" /></td>
+    <td><img src="https://github.com/TheSoftwareTeam/react-github-todo-v2/blob/master/img/todo1.png" alt="Your image title" /></td>
   
  </tr>
  <tr>
@@ -19,7 +19,7 @@
     </td>
  </tr>
  <tr>
-    <td><img src="https://github.com/mahirkursun/react-github-todo-v2/blob/main/img/todo2.png" alt="Your image title" /></td>
+    <td><img src="https://github.com/TheSoftwareTeam/react-github-todo-v2/blob/master/img/todo2.png" alt="Your image title" /></td>
  </tr>
   <tr>
     <td>
@@ -33,7 +33,7 @@ Kilitle seçeneği ile sayfadan çıkış yapılır ve giriş sayfasına gider. 
  </tr>
  
  <tr>
-    <td><img src="https://github.com/mahirkursun/react-github-todo-v2/blob/main/img/todo3.png" alt="Your image title" /></td>
+    <td><img src="https://github.com/TheSoftwareTeam/react-github-todo-v2/blob/master/img/todo3.png" alt="Your image title" /></td>
  </tr>
  
   <tr>
