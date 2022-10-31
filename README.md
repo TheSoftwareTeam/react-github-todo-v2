@@ -11,11 +11,8 @@
  </tr>
  <tr>
     <td>
-      Kullanıcı adı ve şifrenin girilerek Giriş Yap butonuna tıklanması ile o kullanıcı adı ve şifreye ait bir kullanıcı veritabanı nda kontrol edilir, yok ise hata mesajı gösterir, var ise Anasayfa ya geçiş yapılır.
- 
-<br />
- 
-<br /> 
+      Sign in With Github
+    <br /> 
     </td>
  </tr>
  <tr>
@@ -23,12 +20,9 @@
  </tr>
   <tr>
     <td>
-      Bu sayfada menü Adobe Photoshop ile tasarlanmıştır. Sayfalar arası geçiş yapılması için seçeneklere tek tek link verilmiştir. Ürünler, Masalar, Sipariş Ver, Sipariş Detay ve Personellere bu sayfadan erişilir. 
-Kilitle seçeneği ile sayfadan çıkış yapılır ve giriş sayfasına gider. Çıkış seçeneği ile uygulama tamamen kapatılır.
- 
-<br />
- 
-<br />
+       Github Repos and Todo tasks
+
+    <br />
     </td>
  </tr>
  
@@ -38,9 +32,8 @@ Kilitle seçeneği ile sayfadan çıkış yapılır ve giriş sayfasına gider. 
  
   <tr>
     <td>
-      Bu sayfada veritabanı ndan çekilen ürünlerin kaydı tutulur.Ürün silebilir ve silmeden önce “Silmek istediğinizden emin misiniz?” diye uyarı verilir, onay verilirse ürün silinir. Yeni ürün ekleyebilir ve ürünü güncelleyebilir.
-      <br />
-      <br />
+      Github Repos and Todo subtasks
+    <br />
     </td>
   
  </tr>
