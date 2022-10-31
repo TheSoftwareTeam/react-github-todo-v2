@@ -17,34 +17,45 @@ class TodoItem extends Component {
   }
   render() {
     var index2 = 0;
-    this.state.todosDetail.reverse().map((todoDetail) =>
-      this.props.todo.taskId === todoDetail.taskId ? (index2 = index2 + 1) : ""
-    );
-    
-    return (
-    <>
-      <List>
-        <Card className="todoListCard">
-        <ListItem
-          secondaryAction={
-            
-            <button className="detailsBtn" onClick={() => {this.props.handleToggle();
-              this.props.getTaskId(this.props.todo.taskId);
+    this.state.todosDetail
+      .reverse()
+      .map((todoDetail) =>
+        this.props.todo.taskId === todoDetail.taskId
+          ? (index2 = index2 + 1)
+          : ""
+      );
 
-              console.log(this.props.todo.taskId)}}>Details
-            
-            </button>
-          }
-          style={{ height: "48px" }}
-        >
-          <h3>{this.props.index + " . "}</h3>
-            <h3>{this.props.todo.task}</h3>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <h4>{"(" + index2 +" Subtasks"}{")"}</h4>
-        </ListItem>
-        </Card>
-        <Divider variant="fullWidth" component="li" />
-      </List>
+    return (
+      <>
+        <List>
+          <Card className="todoListCard">
+            <ListItem
+              secondaryAction={
+                <button
+                  className="detailsBtn"
+                  onClick={() => {
+                    this.props.handleToggle();
+                    this.props.getTaskId(this.props.todo.taskId);
+
+                    console.log(this.props.todo.taskId);
+                  }}
+                >
+                  Details
+                </button>
+              }
+              style={{ height: "48px" }}
+            >
+              <h3>{this.props.index + " . "}</h3>
+              <h3>{this.props.todo.task}</h3>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <h4>
+                {"(" + index2 + " Subtasks"}
+                {")"}
+              </h4>
+            </ListItem>
+          </Card>
+          <Divider variant="fullWidth" component="li" />
+        </List>
       </>
     );
   }

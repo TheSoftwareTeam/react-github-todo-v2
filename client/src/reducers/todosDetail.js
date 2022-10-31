@@ -11,7 +11,7 @@ const REMOVE = "REMOVE";
 const todosDetail = (state = [], action) => {
   switch (action.type) {
     case ADDTODODETAIL:
-      return addTodoDetail(action.subtask,action.taskId, state);
+      return addTodoDetail(action.subtask, action.taskId, state);
     case TOGGLE:
       return toggleTodoDetail(action.subtaskId, state);
     case REMOVE:

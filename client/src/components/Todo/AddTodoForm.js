@@ -30,8 +30,7 @@ class AddTodoForm extends Component {
 
   render() {
     return (
-      <form  className="TodoInput">
-       
+      <form className="TodoInput">
         <TextField
           id="outlined-basic"
           label="Task Description"

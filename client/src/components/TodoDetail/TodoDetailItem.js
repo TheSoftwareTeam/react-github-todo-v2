@@ -27,15 +27,15 @@ class TodoDetailItem extends Component {
         {completed &&
           (this.props.getTaskId === taskId ? (
             <List>
-              <Card >
+              <Card>
                 {
-                  <ListItem className="todoDetailListCard"
+                  <ListItem
+                    className="todoDetailListCard"
                     secondaryAction={
                       <IconButton edge="end" aria-label="delete">
                         <DeleteIcon onClick={this.handleTodoRemove} />
                       </IconButton>
                     }
-                    
                   >
                     <Checkbox
                       onClick={this.handleTodoToggle}
@@ -47,7 +47,7 @@ class TodoDetailItem extends Component {
                     </h3>
                   </ListItem>
                 }
-                <Divider  variant="fullWidth" component="li" />
+                <Divider variant="fullWidth" component="li" />
               </Card>
             </List>
           ) : (
@@ -56,28 +56,29 @@ class TodoDetailItem extends Component {
         {!completed &&
           (this.props.getTaskId === taskId ? (
             <List>
-              <Card >
+              <Card>
                 {
-                  <ListItem className="todoDetailListCard"
-                  secondaryAction={
-                    <IconButton edge="end" aria-label="delete">
-                      <DeleteIcon onClick={this.handleTodoRemove} />
-                    </IconButton>
-                  }
-                >
-                  <h3>{this.props.index + " . "}</h3>
+                  <ListItem
+                    className="todoDetailListCard"
+                    secondaryAction={
+                      <IconButton edge="end" aria-label="delete">
+                        <DeleteIcon onClick={this.handleTodoRemove} />
+                      </IconButton>
+                    }
+                  >
+                    <h3>{this.props.index + " . "}</h3>
 
-                  <Checkbox
-                    onClick={this.handleTodoToggle}
-                    checked={completed}
-                  />
+                    <Checkbox
+                      onClick={this.handleTodoToggle}
+                      checked={completed}
+                    />
 
-                  <h3 className={completed ? "line" : "noneLine"}>
-                    {subtask}
-                  </h3>
-                </ListItem>
+                    <h3 className={completed ? "line" : "noneLine"}>
+                      {subtask}
+                    </h3>
+                  </ListItem>
                 }
-                <Divider  variant="fullWidth" component="li" />
+                <Divider variant="fullWidth" component="li" />
               </Card>
             </List>
           ) : (

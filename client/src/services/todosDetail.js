@@ -3,7 +3,7 @@ const addTodoDetail = (todoDetailText, getTaskId, todosDetail) => [
     subtaskId: Date.now(),
     subtask: todoDetailText,
     completed: false,
-    taskId: getTaskId
+    taskId: getTaskId,
   },
   ...todosDetail,
 ];

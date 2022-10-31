@@ -8,10 +8,10 @@ export const addTodo = (task) => ({
 });
 
 //TodoDetail
-export const addTodoDetail = (subtask,taskId) => ({
+export const addTodoDetail = (subtask, taskId) => ({
   type: ADDTODODETAIL,
   subtask,
-  taskId
+  taskId,
 });
 
 export const toggleTodoDetail = (subtaskId) => ({

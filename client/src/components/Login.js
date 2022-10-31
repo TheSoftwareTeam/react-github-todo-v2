@@ -7,7 +7,6 @@ import Box from "@mui/material/Box";
 
 export default class Login extends Component {
   render() {
-   
     return (
       <Container fixed>
         <Box
@@ -17,11 +16,11 @@ export default class Login extends Component {
           alignItems="center"
           width="100%"
         >
-          <Box >
-            <Box >
-              <h2  className="todoText">React GitHub Todo List </h2>
+          <Box>
+            <Box>
+              <h2 className="todoText">React GitHub Todo List </h2>
             </Box>
-            <Box >
+            <Box>
               <Button
                 style={{
                   maxWidth: "350px",
@@ -29,15 +28,10 @@ export default class Login extends Component {
                   minWidth: "350px",
                   minHeight: "70px",
                   borderRadius: "15px",
-                 
                 }}
-           
                 variant="outlined"
                 onClick={() => {
-                  this.props.loginWithGithub()
-            
-                  
-                 
+                  this.props.loginWithGithub();
                 }}
                 startIcon={
                   <GitHubIcon
@@ -56,7 +50,6 @@ export default class Login extends Component {
             </Box>
           </Box>
         </Box>
-        
       </Container>
     );
   }

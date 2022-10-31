@@ -22,13 +22,12 @@ class TodoDetail extends Component {
           <ArrowBackIcon />
         </Button>
         <h3 style={{ fontSize: "24px" }}>Todo Detail</h3>
-        
-        <TodoDetailList getTaskId={this.props.getTaskId}/>
-        <AddTodoDetailForm getTaskId={this.props.getTaskId}/>
+
+        <TodoDetailList getTaskId={this.props.getTaskId} />
+        <AddTodoDetailForm getTaskId={this.props.getTaskId} />
       </div>
     );
   }
 }
 
 export default TodoDetail;
-

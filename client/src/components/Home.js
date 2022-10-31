@@ -71,7 +71,6 @@ class Home extends Component {
   }
 
   render() {
-
     const store1 = createStore(
       todoReducer,
       getTodosFromStorage() // Get persisted state from local storage
@@ -95,9 +94,11 @@ class Home extends Component {
     const isActive = this.state.isActive;
     return (
       <Container fixed>
-        <button className="getReposBtn" ref={this.buttonRef} onClick={this.submitHandler}>
-          
-        </button>
+        <button
+          className="getReposBtn"
+          ref={this.buttonRef}
+          onClick={this.submitHandler}
+        ></button>
         <Button
           onClick={() => {
             localStorage.removeItem("accessToken");
@@ -131,22 +132,22 @@ class Home extends Component {
               </Card>
             </Grid>
             <Grid xs={7}>
-                {isActive ? (
-                  <Provider store={store1}>
-                    <Todo
-                      getTaskId={(taskId) => this.getTaskId(taskId)}
-                      handleToggle={this.handleToggle}
-                    />
-                  </Provider>
-                ) : (
-                  <Provider store={store2}>
-                    <TodoDetail
-                      getTaskId={this.state.taskId}
-                      handleToggle={this.handleToggle}
-                    />
-                  </Provider>
-                )}
-              </Grid>
+              {isActive ? (
+                <Provider store={store1}>
+                  <Todo
+                    getTaskId={(taskId) => this.getTaskId(taskId)}
+                    handleToggle={this.handleToggle}
+                  />
+                </Provider>
+              ) : (
+                <Provider store={store2}>
+                  <TodoDetail
+                    getTaskId={this.state.taskId}
+                    handleToggle={this.handleToggle}
+                  />
+                </Provider>
+              )}
+            </Grid>
           </Grid>
         </Box>
       </Container>

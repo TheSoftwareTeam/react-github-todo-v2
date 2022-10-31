@@ -17,11 +17,10 @@ export default class Repo extends Component {
           <Card className="repoCard">
             <ListItem
               secondaryAction={
-                
-            
-                <h5>{"</>"}{repo.language}</h5>
-
-                
+                <h5>
+                  {"</>"}
+                  {repo.language}
+                </h5>
               }
             >
               <ListItemText
