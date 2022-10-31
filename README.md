@@ -22,8 +22,6 @@
     <td>
        Github Repos and Todo tasks
 
-    <br />
-    </td>
  </tr>
  
  <tr>
@@ -34,8 +32,7 @@
     <td>
        Github Repos and Todo subtasks
 
-    <br />
-    </td>
+   
  </tr>
 
  
