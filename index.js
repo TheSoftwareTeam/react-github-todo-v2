@@ -2,24 +2,20 @@ const express = require("express");
 const cors = require("cors");
 const path = require("path");
 
-
 const fetch = (...args) =>
   import("node-fetch").then(({ default: fetch }) => fetch(...args));
 const bodyParser = require("body-parser");
 
-
+const host = "localhost";
 
 const client_id = "cb9bb57da585db57597f";
 const client_secret = "4e43b91fecea1daee467627a5c80d687b3ffb89c";
 
 const app = express();
-app.listen(4000, function () {
-  console.log("CORS server running on port 4000");
-});
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname+"/public")))
+app.use(express.static(path.join(__dirname + "/public")));
 
 app.get("/getAccessToken", async function (req, res) {
   console.log(req.query.code);
@@ -64,3 +60,6 @@ app.get("/getUserData", async function (req, res) {
     });
 });
 
+app.listen(4000, host, function () {
+  console.log("CORS server running on port 4000");
+});
