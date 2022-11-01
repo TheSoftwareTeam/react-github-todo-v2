@@ -41,6 +41,7 @@ class Home extends Component {
   submitHandler(evt) {
     evt.preventDefault();
     this.setState(this.props.getUserData());
+
     axios
       .get(this.props.userData.repos_url)
       .then((response) => {
@@ -98,7 +99,7 @@ class Home extends Component {
           className="getReposBtn"
           ref={this.buttonRef}
           onClick={this.submitHandler}
-        ></button>
+        >sadasd</button>
         <Button
           onClick={() => {
             localStorage.removeItem("accessToken");
