@@ -16,7 +16,7 @@ function App() {
 
     if (codeParam && localStorage.getItem("accessToken") === null) {
       async function getAccessToken() {
-        await fetch("https://reactgithubtodov2.herokuapp.com/getAccessToken?code=" + codeParam, {
+        await fetch("http://localhost:4000/getAccessToken?code=" + codeParam, {
           method: "GET",
         })
           .then((response) => {
@@ -39,7 +39,7 @@ function App() {
   });
 
   async function getUserData() {
-    await fetch("https://reactgithubtodov2.herokuapp.com/getUserData", {
+    await fetch("http://localhost:4000/getUserData", {
       method: "GET",
       headers: {
         Authorization: "Bearer " + localStorage.getItem("accessToken"),
