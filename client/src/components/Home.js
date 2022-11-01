@@ -99,7 +99,7 @@ class Home extends Component {
           className="getReposBtn"
           ref={this.buttonRef}
           onClick={this.submitHandler}
-        >sadasd</button>
+        ></button>
         <Button
           onClick={() => {
             localStorage.removeItem("accessToken");
