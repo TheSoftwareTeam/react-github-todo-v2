@@ -4,7 +4,16 @@
   <tr>
     <td colspan="4" align="center" ><h1> Screenshots </h1> </td>
   </tr>
+  <tr>
+    <td><img src="https://github.com/TheSoftwareTeam/react-github-todo-v2/blob/master/img/snapshot.gif" alt="Your gif title" /></td>
   
+ </tr>
+ <tr>
+    <td>
+      Sign in With Github
+    <br /> 
+    </td>
+ </tr>
   <tr>
     <td><img src="https://github.com/TheSoftwareTeam/react-github-todo-v2/blob/master/img/todo1.png" alt="Your image title" /></td>
   
