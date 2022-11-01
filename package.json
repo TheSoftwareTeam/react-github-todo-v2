@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "^19.0.0"
+    },
   "scripts": {
     "start": "node index.js"
   },
@@ -21,7 +24,7 @@
     "body-parser": "^1.20.1",
     "cors": "^2.8.5",
     "express": "^4.18.2",
+    
     "node-fetch": "^3.2.10"
   }
-  
 }
