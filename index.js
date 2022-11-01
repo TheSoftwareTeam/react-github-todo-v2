@@ -57,7 +57,7 @@ app.get("/getUserData", async function (req, res) {
     });
 });
 
-
-app.listen(4000, function () {
+const port =process.env.PORT || 3000;
+app.listen(port, function () {
   console.log("CORS server running on port 4000");
 });
