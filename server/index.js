@@ -59,7 +59,10 @@ app.get("/getUserData", async function (req, res) {
 });
 
 
+
+
+app.use(express.static(path.join(__dirname+"/public")))
 app.listen(4000,'0.0.0.0', function () {
   console.log("CORS server running on port 4000");
 });
-app.use(express.static(path.join(__dirname+"/public")))
+
