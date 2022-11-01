@@ -118,7 +118,7 @@ class Home extends Component {
               <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                 ListRepos
               </Typography>
-              <GitHubIcon /> 
+              <GitHubIcon />
             </Toolbar>
           </AppBar>
         </Box>
