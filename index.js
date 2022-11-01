@@ -13,6 +13,10 @@ const app = express();
 app.use(express.static(path.join(__dirname + "/public")));
 app.use(cors());
 app.use(bodyParser.json());
+const port =process.env.PORT || 3000;
+app.listen(port, function () {
+  console.log("CORS server running on port 4000");
+});
 
 app.get("/getAccessToken", async function (req, res) {
   console.log(req.query.code);
@@ -57,7 +61,4 @@ app.get("/getUserData", async function (req, res) {
     });
 });
 
-const port =process.env.PORT || 3000;
-app.listen(port, function () {
-  console.log("CORS server running on port 4000");
-});
+
