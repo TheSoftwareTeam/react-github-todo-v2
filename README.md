@@ -10,7 +10,7 @@
  </tr>
  <tr>
     <td>
-      Sign in With Github
+      Github Todo .gif
     <br /> 
     </td>
  </tr>
