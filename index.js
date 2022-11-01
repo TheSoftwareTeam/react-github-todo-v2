@@ -1,10 +1,12 @@
 const express = require("express");
 const cors = require("cors");
+const path = require("path");
+app.use(express.static(path.join(__dirname+"/public")))
+
 const fetch = (...args) =>
   import("node-fetch").then(({ default: fetch }) => fetch(...args));
 const bodyParser = require("body-parser");
 
-const path = require("path");
 
 
 const client_id = "cb9bb57da585db57597f";
@@ -58,6 +60,7 @@ app.get("/getUserData", async function (req, res) {
     });
 });
 
+app.listen(4000, function () {
+  console.log("CORS server running on port 4000");
+});
 
-app.listen(4000);
-app.use(express.static(path.join(__dirname+"/public")))
