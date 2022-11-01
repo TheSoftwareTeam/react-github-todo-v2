@@ -104,7 +104,7 @@ class Home extends Component {
           onClick={() => {
             localStorage.removeItem("accessToken");
             this.props.setRerender(!this.props.rerender);
-          }}
+          }} 
           className="btnSignOut"
           variant="contained"
           endIcon={<LogoutIcon />}
