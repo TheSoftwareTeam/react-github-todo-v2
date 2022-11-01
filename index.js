@@ -8,13 +8,13 @@ const path = require("path");
 
 const client_id = "cb9bb57da585db57597f";
 const client_secret = "4e43b91fecea1daee467627a5c80d687b3ffb89c";
-
+const host ="localhost";
 const app = express();
 app.use(express.static(path.join(__dirname + "/public")));
 app.use(cors());
 app.use(bodyParser.json());
 const port =process.env.PORT || 3000;
-app.listen(port, function () {
+app.listen(port,host, function () {
   console.log("CORS server running on port 4000");
 });
 
